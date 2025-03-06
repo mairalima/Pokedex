@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.fintrack"
-        minSdk = 21
+        minSdk = 23
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -46,6 +46,22 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("androidx.security:security-crypto:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
+
+
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0") // Retrofit dependency
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")  // Gson converter (if using Gson)
+    implementation ("com.github.bumptech.glide:glide:4.13.0")
+    kapt ("com.github.bumptech.glide:compiler:4.13.0")
+
 
     //Room
     kapt(libs.room.compiler)
