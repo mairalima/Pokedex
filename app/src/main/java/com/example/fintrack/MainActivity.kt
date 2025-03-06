@@ -59,7 +59,24 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val pokemon = response.body()
                     if (pokemon != null) {
+                        val types = pokemon.types.joinToString { it.type.name }
+                        val weightKg = pokemon.weight / 10.0
+                        val heightM = pokemon.height / 10.0
+                        val hp = pokemon.stats.find { it.stat.name == "hp" }?.baseStat ?: 0
+                        val atk = pokemon.stats.find { it.stat.name == "attack" }?.baseStat ?: 0
+                        val def = pokemon.stats.find { it.stat.name == "defense" }?.baseStat ?: 0
+                        val spd = pokemon.stats.find { it.stat.name == "speed" }?.baseStat ?: 0
+                        val exp = pokemon.baseExperience
                         Log.d("Image", "Imagem Pokemon: $pokemon.sprites.image")
+                        Log.d("PokeDetails", "Types: $types")
+                        Log.d("PokeDetails", "Weight: ${weightKg}kg")
+                        Log.d("PokeDetails", "Height: ${heightM}m")
+                        Log.d("PokeDetails", "HP: $hp")
+                        Log.d("PokeDetails", "ATK: $atk")
+                        Log.d("PokeDetails", "DEF: $def")
+                        Log.d("PokeDetails", "SPD: $spd")
+                        Log.d("PokeDetails", "EXP: $exp")
+
                     }
                 } else {
                     Log.e("Image", "Request Error: ${response.errorBody()}")
