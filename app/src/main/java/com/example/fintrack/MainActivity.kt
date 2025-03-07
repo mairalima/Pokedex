@@ -30,12 +30,44 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        pokemonAdapter = PokemonAdapter(pokemonList)
+
+        // DEFININDO O ONITEMCLICK LISTENER
+        /*
+        pokemonAdapter = PokemonAdapter(pokemonList){ position ->
+            val pokemon = pokemonList[position]
+            openNomeDaActivityCriadaPorTalita(pokemon)
+        }
+        */
         recyclerView.adapter = pokemonAdapter
 
         // Fetch list of Pokémon when the activity is created
         fetchPokemonData()
     }
+
+    // LÓGICA PARA ABRIR A TELA DE DETALHES
+    /*
+    private fun openNomeDaActivityCriadaPorTalita(pokemon: Pokemon) {
+        val intent = Intent(this, NomeDaActivityCriadaPorTalita::class.java)
+        intent.putExtra("pokemon_name", pokemon.name)
+        intent.putExtra("pokemon_image_url", pokemon.imageUrl)
+        startActivity(intent)
+    }
+    */
+
+    // LÓGICA PARA RECUPERAR OS DADOS NA ACTIVITY DE DETALHES CRIADA POR TALITA
+    /*
+    val pokemonName = intent.getStringExtra("pokemon_name")
+    val pokemonImageUrl = intent.getStringExtra("pokemon_image_url")
+
+    EXIBIR OS DETALHES DO POKEMON NA TELA
+
+    val nameTextView: TextView = findViewById(R.id.pokemon_name_textview)
+    val imageView: ImageView = findViewById(R.id.pokemon_imageview)
+    nameTextView.text = pokemonName
+        Glide.with(this)
+            .load(pokemonImageUrl)
+            .into(imageView)
+    */
 
 
     private fun fetchPokemonData() {

@@ -10,7 +10,12 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 
-class PokemonAdapter(private val pokemonList: List<Pokemon>) : Adapter<PokemonAdapter.PokemonViewHolder>() {
+class PokemonAdapter(private val pokemonList: List<Pokemon>
+
+// ARGUMENTO PARA O ONITENCLICK LISTENER
+/*, private val onItemClick: (Int) -> Unit*/
+
+) : Adapter<PokemonAdapter.PokemonViewHolder>() {
     //view que segura os dados
     class PokemonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgPokemon: ImageView = itemView.findViewById(R.id.imageViewPokemon)
@@ -31,6 +36,11 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>) : Adapter<PokemonAd
         Glide.with(holder.itemView.context)
             .load(pokemon.imageUrl)
             .into(holder.imgPokemon)
+
+        // ADICIONANDO O ONCLICKLISTENER
+        /*holder.itemView.setOnClickListener {
+            onItemClick(position)
+        }*/
     }
 
     override fun getItemCount(): Int {
