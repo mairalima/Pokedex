@@ -5,8 +5,14 @@ import com.google.gson.annotations.SerializedName
 data class PokemonDTO(
     val name: String,
     val url: String,
+    val sprites: Sprites,
+    val weight: Int,
+    val height: Int,
+    @SerializedName("base_experience")
+    val baseExperience: Int,
+    val types: List<TypeSlot>,
+    val stats: List<Stat>
 )
-
 data class TypeSlot(
     val slot: Int,
     val type: TypeInfo
@@ -30,7 +36,12 @@ data class StatInfo (
 data class Sprites (
     @SerializedName("front_default")
     val frontDefault: String?
-){
-       val image: String?
-        get() = frontDefault
+)
+
+
+fun PokemonDTO.toPokemon(): Pokemon {
+    return Pokemon(
+        name = this.name,
+        imageUrl = this.sprites.frontDefault ?: "" // Se a imagem for nula, retorna ""
+    )
 }
