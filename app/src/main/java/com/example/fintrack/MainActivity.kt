@@ -1,18 +1,22 @@
-package com.example.fintrack
-
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var recyclerviewActivity: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Configurando RecyclerView
+        val pokemonList = mutableListOf<Pokemon>()
+        recyclerviewActivity = findViewById(R.id.activity_recyclerview)
+        recyclerviewActivity.adapter = PokemonAdapter(pokemonList)
         // Fetch list of Pokémon when the activity is created
         fetchPokemonData()
     }
@@ -86,5 +90,6 @@ class MainActivity : AppCompatActivity() {
                 Log.e("Image", "Network Error: ${t.message}")
             }
         })
+
     }
 }
