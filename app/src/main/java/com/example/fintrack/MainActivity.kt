@@ -1,10 +1,18 @@
 package com.example.fintrack
 
 import android.os.Bundle
+import android.telecom.Call
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fintrack.PokeApi
+import com.example.fintrack.Pokemon
+import com.example.fintrack.PokemonAdapter
+import com.example.fintrack.PokemonDetails
+import com.example.fintrack.PokemonResponse
+import com.example.fintrack.R
+import com.example.fintrack.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -58,7 +66,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
 
     private fun fetchPokemonDetails(url: String) {
         val pokeApi = RetrofitClient.retrofitInstance.create(PokeApi::class.java)
