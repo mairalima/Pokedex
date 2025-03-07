@@ -10,7 +10,7 @@
     tools:background="@color/light_orange">
 
     <ImageView
-        android:id="@+id/iv_rv_pokemon"
+        android:id="@+id/imageViewPokemon"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="16dp"
@@ -31,9 +31,9 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/iv_rv_pokemon"
-        app:layout_constraintStart_toStartOf="@+id/iv_rv_pokemon"
-        app:layout_constraintTop_toBottomOf="@+id/iv_rv_pokemon"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewPokemon"
+        app:layout_constraintStart_toStartOf="@+id/imageViewPokemon"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPokemon"
         tools:text="Name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

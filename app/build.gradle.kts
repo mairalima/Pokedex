@@ -61,6 +61,7 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")  // Gson converter (if using Gson)
     implementation ("com.github.bumptech.glide:glide:4.13.0")
     kapt ("com.github.bumptech.glide:compiler:4.13.0")
+    implementation ("com.google.android.gms:play-services-base:17.6.0")
 
 
     //Room
