@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/item_background"
     android:padding="8dp"
     android:elevation="4dp">
 
@@ -75,7 +74,7 @@
             android:layout_height="wrap_content"
             android:text="Botão 1"
             android:textSize="16sp"
-            android:backgroundTint="@color/purple_500"
+            android:backgroundTint="@color/black"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toStartOf="@id/guideline"
             app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +87,7 @@
             android:layout_height="wrap_content"
             android:text="Botão 2"
             android:textSize="16sp"
-            android:backgroundTint="@color/teal_700"
+            android:backgroundTint="@color/black"
             android:textColor="@android:color/white"
             app:layout_constraintStart_toEndOf="@id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
