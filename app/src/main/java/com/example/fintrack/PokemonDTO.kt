@@ -3,6 +3,7 @@ package com.example.fintrack
 import com.google.gson.annotations.SerializedName
 
 data class PokemonDTO(
+    val id : Int,
     val name: String,
     val url: String,
     val sprites: Sprites,
@@ -40,8 +41,23 @@ data class Sprites (
 
 
 fun PokemonDTO.toPokemon(): Pokemon {
+    val typesList = types.map { it.type.name } // Create a List<String> from the types
+    val hp = stats.find { it.stat.name == "hp" }?.baseStat ?: 0
+    val atk = stats.find { it.stat.name == "attack" }?.baseStat ?: 0
+    val def = stats.find { it.stat.name == "defense" }?.baseStat ?: 0
+    val spd = stats.find { it.stat.name == "speed" }?.baseStat ?: 0
+
     return Pokemon(
         name = this.name,
-        imageUrl = this.sprites.frontDefault ?: "" // Se a imagem for nula, retorna ""
+        imageUrl = this.sprites.frontDefault ?: "", // imagem vazia, retorna lista vazia
+        weight = this.weight / 10.0, //converter para Kg
+        height = this.height / 10.0, //converter para m
+        baseExperience = this.baseExperience,
+        types = typesList, // retornando uma list<strings)
+        hp = hp,
+        attack = atk,
+        defense = def,
+        speed = spd,
+        id = this.id
     )
 }
