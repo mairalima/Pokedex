@@ -1,0 +1,259 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/item_background"
+    android:padding="8dp"
+    android:elevation="4dp">
+
+    <!-- imagem, nome e número -->
+    <RelativeLayout
+        android:id="@+id/RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@color/green"
+        android:padding="9dp">
+
+        <!-- Nome Pokédex -->
+        <TextView
+            android:id="@+id/textViewPokemonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Pokedex"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+        <!-- Número do Pokémon -->
+        <TextView
+            android:id="@+id/textViewPokemonNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            tools:text="#001"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+
+        <!-- Imagem do Pokémon -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="131dp"
+            android:layout_marginBottom="44dp"
+            tools:srcCompat="@tools:sample/avatars" />
+    </RelativeLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Botão 1"
+            android:textSize="16sp"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="15dp"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Botão 2"
+            android:textSize="16sp"
+            android:backgroundTint="@color/teal_700"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="15dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Peso e Altura  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/textViewWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="Peso: 6.9 kg"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:padding="8dp"
+            />
+
+        <TextView
+            android:id="@+id/textViewHeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="Altura: 1.7 m"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:padding="8dp"
+            />
+    </LinearLayout>
+
+
+
+    <!-- Tipos do Pokémon -->
+    <LinearLayout
+        android:id="@+id/layoutPokemonTypes"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        tools:text="NORMAL">
+
+        <TextView
+            android:id="@+id/name_pokemon"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            tools:text="Bulbasaur" />
+
+
+    </LinearLayout>
+
+    <!-- Barras de progresso -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="24sp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/textViewHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HP"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="4dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBarHP"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="45"
+            android:max="100"/>
+
+        <TextView
+            android:id="@+id/textViewATK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ataque"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="4dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBarATK"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="49"
+            android:max="100"/>
+
+        <TextView
+            android:id="@+id/textViewDEF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Defesa"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="4dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBarDEF"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="49"
+            android:max="100"/>
+
+        <TextView
+            android:id="@+id/textViewSPD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Velocidade"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="4dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBarSPD"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="45"
+            android:max="100"/>
+
+        <TextView
+            android:id="@+id/textViewEXP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXP"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="4dp"/>
+        <ProgressBar
+            android:id="@+id/progressBarEXP"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="64"
+            android:max="100"/>
+    </LinearLayout>
+
+</LinearLayout>
