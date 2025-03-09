@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+    val room_version = "2.6.1"
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -62,6 +64,12 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.13.0")
     kapt ("com.github.bumptech.glide:compiler:4.13.0")
     implementation ("com.google.android.gms:play-services-base:17.6.0")
+    // ViewModel e LiveData
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+
+    // Activity KTX (necessário para usar viewModels() diretamente na Activity)
+    implementation ("androidx.activity:activity-ktx:1.8.2")
 
 
     //Room
@@ -69,5 +77,12 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.room.paging)
     implementation(libs.room.ktx)
+    //Room database
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    implementation("androidx.room:room-guava:$room_version")
+
 
 }
