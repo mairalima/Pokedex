@@ -1,5 +1,6 @@
 package com.example.fintrack
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -17,6 +18,7 @@ class PokemonViewModel(private val repository: PokemonRepository) : ViewModel() 
 
     private val _pokemonList = MutableLiveData<List<Pokemon>>()
     val pokemonList: LiveData<List<Pokemon>> get() = _pokemonList
+
 
     //
     fun fetchPokemonData() {
@@ -37,7 +39,14 @@ class PokemonViewModel(private val repository: PokemonRepository) : ViewModel() 
             }
         }
     }
+
+    fun getPokemonById(id: Int): LiveData<PokemonEntity> {
+        Log.d("PokemonViewModel", "Fetching Pokemon with ID: $id")
+        return repository.getPokemonById(id)
+    }
 }
+
+
 
 /*class PokemonViewModel : ViewModel() {
 

@@ -1,6 +1,7 @@
 package com.example.fintrack.repository
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import com.example.fintrack.PokeApi
 import com.example.fintrack.PokemonDTO
 import com.example.fintrack.PokemonEntity
@@ -94,5 +95,12 @@ class PokemonRepository(private val pokemonDao: PokemonDao) {
         return withContext(Dispatchers.IO) {
             pokemonDao.getAllPokemons()
         }
+
     }
-}
+
+    fun getPokemonById(id: Int): LiveData<PokemonEntity> {
+        return pokemonDao.getPokemonById(id)
+    }
+
+    }
+
