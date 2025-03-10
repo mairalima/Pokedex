@@ -1,6 +1,8 @@
 package com.example.fintrack
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -31,6 +33,12 @@ class MainActivity : AppCompatActivity() {
         pokemonAdapter = PokemonAdapter(emptyList()) // Inicializa com lista vazia
         recyclerView.adapter = pokemonAdapter
 
+        pokemonAdapter.setOnclickListener { pokemon ->
+            val intent = Intent(this, PokemonDetailActivity::class.java)
+            intent.putExtra("pokemon_id", pokemon.id)
+            startActivity(intent)
+            Log.d("Mostre Click", pokemon.toString())
+        }
         // Observar mudanças na lista de Pokémon
         viewModel.pokemonList.observe(this, Observer { pokemonList ->
             pokemonAdapter.updateList(pokemonList)
@@ -39,4 +47,6 @@ class MainActivity : AppCompatActivity() {
         // Chama a função para buscar dados
         viewModel.fetchPokemonData()
     }
+
+
 }
