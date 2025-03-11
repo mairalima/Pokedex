@@ -76,6 +76,7 @@ class PokemonDetailActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(pokemon.imageUrl)
+            .override(500, 500)
             .into(findViewById(R.id.imageViewPokemon))
     }
 
