@@ -90,14 +90,13 @@ class PokemonAdapter(private var pokemonList: List<Pokemon>) : Adapter<PokemonAd
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
         val pokemon = pokemonList[position]
 
-        // ✅ Verifica se o nome não está nulo
+        // Verifica se o nome não está nulo
         Log.d("Adapter", "Exibindo Pokémon: ${pokemon.name}")
         holder.namePokemon.text = pokemon.name
         //holder.weightPokemon.text = "Peso: ${pokemon.weight}kg "
         //holder.heightPokemon.text = "Altura: ${pokemon.height}m"
         //holder.typeTextView.text = "Tipo: ${pokemon.types}"
         //holder.statsTextView.text = "HP: ${pokemon.hp} | ATK: ${pokemon.attack} | DEF: ${pokemon.defense} | SPD: ${pokemon.speed}"
-
 
 
         Glide.with(holder.itemView.context)
@@ -112,21 +111,21 @@ class PokemonAdapter(private var pokemonList: List<Pokemon>) : Adapter<PokemonAd
         val baseColorResId = typeColors[pokemonType] ?: R.color.type_normal
         val baseColor = ContextCompat.getColor(holder.itemView.context, baseColorResId)
 
-        // Suavizar a cor base misturando com branco (30% mais claro)
+        // Suavizar a cor base misturando com branco (10% mais claro)
         val softColor = ColorUtils.blendARGB(baseColor, Color.WHITE, 0.1f)
 
-        // Variar o tom para diferenciar Pokémon do mesmo tipo (baseado no ID)
+        // Variar o tom para diferenciar Pokémons do mesmo tipo (baseado no ID)
         val variedColor = ColorUtils.blendARGB(softColor, Color.WHITE, (pokemon.id % 4) * 0.1f)
 
         // Aplicar a cor final ao fundo do item
         setRoundedBackgroundColor(holder.itemView, variedColor)
 
         holder.itemView.setOnClickListener{
-          pokClickListener?.invoke(pokemon)
+            pokClickListener?.invoke(pokemon)
         }
     }
 
-    // NOVO MÉTODO CRIADO
+    // NOVO MÉTODO CRIADO PARA CONFIGURAR O BACKGROUND
     private fun setRoundedBackgroundColor(view: View, color: Int) {
         val background = view.background as? GradientDrawable
         if (background != null) {
@@ -134,11 +133,11 @@ class PokemonAdapter(private var pokemonList: List<Pokemon>) : Adapter<PokemonAd
         }
     }
 
-   override fun getItemCount(): Int = pokemonList.size
+    override fun getItemCount(): Int = pokemonList.size
 
     // HOUVE ALTERAÇÃO NESSA LINHA
     fun updateList(newList: List<Pokemon>) {
-        pokemonList = newList.shuffled() // Adicionei o "shuffled"
+        pokemonList = newList.shuffled() // Adicionei o "shuffled" para não ser exibido pokemons do mesmo tipo
         notifyDataSetChanged()
     }
 
