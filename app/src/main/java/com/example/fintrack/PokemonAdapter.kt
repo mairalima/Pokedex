@@ -63,7 +63,7 @@ class PokemonAdapter(private var pokemonList: List<Pokemon>) : Adapter<PokemonAd
     // MÉTODO PARA GERAR CORES PERSONALIZADAS DE ACORDO COM O POKEMON
     fun generatePokemonColor(baseColor: Int, pokemonId: Int): Int {
         val uniqueColor = colorPalette[pokemonId % colorPalette.size]
-        return ColorUtils.blendARGB(uniqueColor, Color.WHITE, 0.3f) // Mistura com branco (30%)
+        return ColorUtils.blendARGB(uniqueColor, Color.WHITE, 0.2f) // Mistura com branco (30%)
     }
 
     private var pokClickListener: ((Pokemon) -> Unit)? = null
