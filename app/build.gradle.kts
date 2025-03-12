@@ -64,6 +64,9 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.13.0")
     kapt ("com.github.bumptech.glide:compiler:4.13.0")
     implementation ("com.google.android.gms:play-services-base:17.6.0")
+    // Implementação para recorte e ampliação de imagens pequenas.
+    implementation("jp.wasabeef:glide-transformations:4.3.0")
+
     // ViewModel e LiveData
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")

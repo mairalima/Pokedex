@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="redBar">#D53B46</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red">#F54336</color>
-    <color name="redBar">#D53B46</color>
-    <color name="pink">#EA1E61</color>
-    <color name="violet">#9D28AC</color>
-    <color name="ocean_blue">#3F51B2</color>
-    <color name="blue">#1A96F0</color>
-    <color name="water_blue">#00BCD3</color>
-    <color name="water_green">#009689</color>
     <color name="green">#4AAF57</color>
-    <color name="light_yellow">#FFEB4F</color>
-    <color name="medium_yellow">#FFC02D</color>
     <color name="light_orange">#FF981F</color>
-    <color name="medium_orange">#FF5726</color>
-    <color name="brown">#7A5548</color>
-    <color name="grey">#607D8A</color>
+
+    <!-- Tipos de Pokémon -->
+    <color name="type_normal">#A8A77A</color>
+    <color name="type_fire">#EE8130</color>
+    <color name="type_water">#6390F0</color>
+    <color name="type_electric">#F7D02C</color>
+    <color name="type_grass">#7AC74C</color>
+    <color name="type_ice">#96D9D6</color>
+    <color name="type_fighting">#C22E28</color>
+    <color name="type_poison">#A33EA1</color>
+    <color name="type_ground">#E2BF65</color>
+    <color name="type_flying">#A98FF3</color>
+    <color name="type_psychic">#F95587</color>
+    <color name="type_bug">#A6B91A</color>
+    <color name="type_rock">#B6A136</color>
+    <color name="type_ghost">#735797</color>
+    <color name="type_dragon">#6F35FC</color>
+    <color name="type_dark">#705746</color>
+    <color name="type_steel">#B7B7CE</color>
+    <color name="type_fairy">#D685AD</color>
+
 </resources>
