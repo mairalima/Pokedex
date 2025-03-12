@@ -98,7 +98,6 @@ class PokemonAdapter(private var pokemonList: List<Pokemon>) : Adapter<PokemonAd
         //holder.typeTextView.text = "Tipo: ${pokemon.types}"
         //holder.statsTextView.text = "HP: ${pokemon.hp} | ATK: ${pokemon.attack} | DEF: ${pokemon.defense} | SPD: ${pokemon.speed}"
 
-
         Glide.with(holder.itemView.context)
             .load(pokemon.imageUrl)
             .override(250, 250) // Força um tamanho uniforme
