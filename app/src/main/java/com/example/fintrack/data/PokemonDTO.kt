@@ -1,4 +1,4 @@
-package com.example.fintrack
+package com.example.fintrack.data
 
 import com.google.gson.annotations.SerializedName
 
@@ -33,7 +33,6 @@ data class StatInfo (
     val name: String
 )
 
-//criei assim só para lembrar que esta buscando a imagem, dentro da url a proprieda sprites contem o front_default com a imagem
 data class Sprites (
     @SerializedName("front_default")
     val frontDefault: String?
@@ -41,7 +40,7 @@ data class Sprites (
 
 
 fun PokemonDTO.toPokemon(): Pokemon {
-    val typesList = types.map { it.type.name } // Create a List<String> from the types
+    val typesList = types.map { it.type.name }
     val hp = stats.find { it.stat.name == "hp" }?.baseStat ?: 0
     val atk = stats.find { it.stat.name == "attack" }?.baseStat ?: 0
     val def = stats.find { it.stat.name == "defense" }?.baseStat ?: 0
@@ -49,11 +48,11 @@ fun PokemonDTO.toPokemon(): Pokemon {
 
     return Pokemon(
         name = this.name,
-        imageUrl = this.sprites.frontDefault ?: "", // imagem vazia, retorna lista vazia
-        weight = this.weight / 10.0, //converter para Kg
-        height = this.height / 10.0, //converter para m
+        imageUrl = this.sprites.frontDefault ?: "",
+        weight = this.weight / 10.0,
+        height = this.height / 10.0,
         baseExperience = this.baseExperience,
-        types = typesList, // retornando uma list<strings)
+        types = typesList,
         hp = hp,
         attack = atk,
         defense = def,

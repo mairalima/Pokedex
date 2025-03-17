@@ -1,4 +1,4 @@
-package com.example.fintrack
+package com.example.fintrack.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

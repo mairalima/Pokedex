@@ -1,11 +1,11 @@
-package com.example.fintrack
+package com.example.fintrack.database
 
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.fintrack.database.PokemonDao
+import com.example.fintrack.data.PokemonEntity
 
 
 @Database(entities = [PokemonEntity::class], version = 1)

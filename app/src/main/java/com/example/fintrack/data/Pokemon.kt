@@ -1,4 +1,4 @@
-package com.example.fintrack
+package com.example.fintrack.data
 
 data class Pokemon(
     val name: String,

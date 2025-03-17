@@ -1,4 +1,4 @@
-package com.example.fintrack
+package com.example.fintrack.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -12,7 +12,7 @@ data class PokemonEntity(
     val weight: Double,
     val height: Double,
     val baseExperience: Int,
-    val types: String, // Lista convertida para String (separada por vírgula)
+    val types: String,
     val hp: Int,
     val attack: Int,
     val defense: Int,
@@ -20,7 +20,7 @@ data class PokemonEntity(
 )
 
 fun PokemonEntity.toPokemon(): Pokemon {
-    // colocado uma , para separar os tipos
+
     val typesList = this.types.split(", ")
 
     return Pokemon(
@@ -30,7 +30,7 @@ fun PokemonEntity.toPokemon(): Pokemon {
         weight = this.weight,
         height = this.height,
         baseExperience = this.baseExperience,
-        types = typesList, // convertendo string p lista
+        types = typesList,
         hp = this.hp,
         attack = this.attack,
         defense = this.defense,

@@ -1,4 +1,4 @@
-package com.example.fintrack
+package com.example.fintrack.api
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
