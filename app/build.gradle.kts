@@ -73,7 +73,7 @@ dependencies {
 
     // Activity KTX (necessário para usar viewModels() diretamente na Activity)
     implementation ("androidx.activity:activity-ktx:1.8.2")
-
+    implementation ("jp.wasabeef:glide-transformations:4.3.0")
 
     //Room
     kapt(libs.room.compiler)
@@ -86,6 +86,8 @@ dependencies {
     kapt("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
     implementation("androidx.room:room-guava:$room_version")
+
+
 
 
 }

@@ -2,13 +2,13 @@ package com.example.fintrack.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import com.example.fintrack.PokeApi
-import com.example.fintrack.PokemonDTO
-import com.example.fintrack.PokemonEntity
-import com.example.fintrack.PokemonResponse
-import com.example.fintrack.RetrofitClient
+import com.example.fintrack.api.PokeApi
+import com.example.fintrack.data.PokemonDTO
+import com.example.fintrack.data.PokemonEntity
+import com.example.fintrack.response.PokemonResponse
+import com.example.fintrack.api.RetrofitClient
 import com.example.fintrack.database.PokemonDao
-import com.example.fintrack.toPokemonEntity
+import com.example.fintrack.database.toPokemonEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -20,7 +20,7 @@ class PokemonRepository(private val pokemonDao: PokemonDao) {
 
     private val pokeApi = RetrofitClient.retrofitInstance.create(PokeApi::class.java)
 
-    // funcao para carregar o pokemon em lista direto da api
+
     fun getPokemonList(onResult: (List<PokemonEntity>) -> Unit) {
         pokeApi.getPokemon().enqueue(object : Callback<PokemonResponse> {
             override fun onResponse(call: Call<PokemonResponse>, response: Response<PokemonResponse>) {
@@ -39,7 +39,7 @@ class PokemonRepository(private val pokemonDao: PokemonDao) {
         })
     }
 
-    //funcao p trazer os detalhes
+
     private fun fetchDetailsForAllPokemon(pokemonResults: List<PokemonDTO>, onResult: (List<PokemonEntity>) -> Unit) {
         val pokemonList = mutableListOf<PokemonEntity>()
         var requestsCompleted = 0
@@ -64,7 +64,6 @@ class PokemonRepository(private val pokemonDao: PokemonDao) {
                         Log.e("PokeDetails", "Erro ao buscar detalhes do Pokémon: ${response.errorBody()}")
                     }
 
-                    // Check if all requests have been completed
                     requestsCompleted++
                     if (requestsCompleted == pokemonResults.size) {
                         onResult(pokemonList)
@@ -82,15 +81,15 @@ class PokemonRepository(private val pokemonDao: PokemonDao) {
         }
     }
 
-    // funçao p salvar em banco de dados
+
     private fun savePokemonToDatabase(pokemon: PokemonEntity) {
-        // Using a proper scope for database operations
+
         kotlinx.coroutines.GlobalScope.launch {
             pokemonDao.insertPokemon(pokemon)
         }
     }
 
-    // funcao p pegar o pokemon do banco
+
     suspend fun getLocalPokemon(): List<PokemonEntity> {
         return withContext(Dispatchers.IO) {
             pokemonDao.getAllPokemons()
