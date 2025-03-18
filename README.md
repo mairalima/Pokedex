@@ -4,30 +4,65 @@
 
 </div>
 
-HackSprint 2024 - Devspace 
+Pokedex - Equipe 10 - HackSprint 2025 - Devspace 
 ==========================
 Evento de tecnologia promovido pelo Devspace.
 
-# Informações da Hacksprint 
+# Sobre o Projeto
+A proposta do app é apresentar uma lista de Pokémons e permitir que o usuário visualize detalhes completos de cada um deles. Além disso, o aplicativo conta com suporte offline e segue boas práticas de desenvolvimento.
 
-### 1. O que é uma Hacksprint? 
-   HackSprint é um evento onde todos os participantes da comunidade se juntam em grupos ou duplas para desenvolver um desafio de código e trocar conhecimentos.
-   Seguindo a regra do [70/20/10](https://www.google.com/search?q=o+que+%C3%A9+a+regra+70+20+10&rlz=1C5CHFA_enDE1036DE1036&oq=o+que+%C3%A9+a+regra+70+20+10&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB7SAQg3ODcyajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#imgrc=0oHCIDUqPyAbqM) o evento tem como objetivo reforçar a colaboração e mão na massa, trazendo uma oportunidade de acelerar o aprendizado em um período de 2 semanas.
+## :camera_flash: Screenshots
+<!-- You can add more screenshots here if you like -->
+<img src="https://github.com/user-attachments/assets/5e9d3ac4-7ccc-4162-a9e9-68f64f2aa637" width=200/> <img src="https://github.com/user-attachments/assets/c05b26bb-967e-4483-8e8a-0fe5bdcd7df2" width=200/>
 
-### 2. Por que duas semanas?
-   Vamos simular o tempo de uma Sprint para gerenciamento de desenvolvimento software, com isso nossos alunos terão a oportunidade de ter uma experiência imersiva em como funciona o dia a dia de um programador que já trabalha na área.
+# Design
+O design do aplicativo foi inspirado em uma interface limpa e objetiva, apresentando:
+- Tela inicial: Exibe um grid de Pokémons com imagem e nome.
+- Tela de detalhes: Mostra informações específicas e atributos do Pokémon selecionado.
 
-### 3. Data:
-   * Início: 13/05/2024
-   * Apresentação final: 27/05/2024
-   * 29/05/2024: 29/05/2024
+# Funcionalidades
+- Exibir lista de Pokémons com imagem e nome.
+- Visualizar detalhes de cada Pokémon ao clicar na lista.
+- Mostrar mensagens de erro e estado vazio quando aplicável.
+- Offline Mode: Utiliza dados armazenados localmente para acesso sem internet.
+- Arquitetura MVVM para melhor organização e manutenção do código.
+- Integração com a API da Pokedex para buscar os dados.
 
-# Primeiros passos
-   1. Clonar board de tarefas - [Acessar board de tarefas](https://www.notion.so/devspacecommunity/Board-de-tarefas-16b3c63daa1641f0aa53d92ff37abe52)
-   2. Usar o repositório como template.
-   3. Organizar as reuniões(Planning, Daily, Retro). 
-   4. Agora é só codar e subir as alterações para o github.
-   5. Quando finalizado, enviar link do projeto no canal do discord.
+# Tecnologias e Ferramentas Utilizadas
+O projeto utiliza tecnologias do desenvolvimento Android para garantir um desempenho eficiente e uma experiência fluida:
+- Linguagem: Kotlin;
+- Layout: ConstraintLayout;
+- Lista:
+   - RecyclerView;
+   - ListAdapter
+   - DiffUtils
+- Gerenciamento de Layout: GridLayoutManager / LinearLayoutManager;
+- Navegação: Explicit Intent para navegação entre telas;
+- Retrofit para consumo da API;
+- Gson para conversão de dados JSON; 
+- Room para armazenamento local (Offline Mode);
+- Glide para carregamento de imagens
+
+# Organização e Metodologia
+O projeto foi dividido em etapas seguindo práticas ágeis durante a HackSprint, com uso de Planning, Dailies e Retrospectivas, simulando o ambiente real de desenvolvimento de software.
+
+# HackSprint
+Evento promovido pelo Devspace, com duração de duas semanas, focado em:
+- Aprendizado colaborativo.
+- Prática intensa de desenvolvimento.
+- Simulação de um ambiente profissional.
+
+# Contribuidores
+- André Oliveira Brito Souza Vita
+- Talita Evancely
+- Maíra Lima
+- Eunice
+- Henrique Nunes
+
+# Como Rodar o Projeto
+- Clone o repositório:
+- Abra o projeto no Android Studio
+- Compile e execute no emulador ou dispositivo físico
 
 # License
 
