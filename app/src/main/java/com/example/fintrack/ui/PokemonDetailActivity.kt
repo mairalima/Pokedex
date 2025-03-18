@@ -6,8 +6,10 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import android.graphics.Color
+import android.graphics.PorterDuff
 import android.util.Log
 import android.widget.Button
+import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.Observer
@@ -21,6 +23,7 @@ import com.example.fintrack.repository.PokemonRepository
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
 
+@Suppress("DEPRECATION")
 class PokemonDetailActivity : AppCompatActivity() {
 
     private lateinit var viewModel: PokemonViewModel
@@ -87,14 +90,34 @@ class PokemonDetailActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.textViewEXP).text = "Experiencia: ${pokemon.baseExperience}"
         findViewById<TextView>(R.id.textViewPokemonNumber).text = "#${pokemon.id}"
 
+        val hpBar = findViewById<ProgressBar>(R.id.progressBarHP)
+        val atkBar = findViewById<ProgressBar>(R.id.progressBarATK)
+        val defBar = findViewById<ProgressBar>(R.id.progressBarDEF)
+        val spdBar = findViewById<ProgressBar>(R.id.progressBarSPD)
+        val expBar = findViewById<ProgressBar>(R.id.progressBarEXP)
 
+// Aplicar cores diferentes para cada ProgressBar
+        hpBar.progressDrawable.setColorFilter(Color.parseColor("#FFD700"), PorterDuff.Mode.SRC_IN) // Verde
+        atkBar.progressDrawable.setColorFilter(Color.parseColor("#8B0000"), PorterDuff.Mode.SRC_IN) // Vermelho
+        defBar.progressDrawable.setColorFilter(Color.parseColor("#00008B"), PorterDuff.Mode.SRC_IN) // Azul
+        spdBar.progressDrawable.setColorFilter(Color.parseColor("#40E0D0"), PorterDuff.Mode.SRC_IN) // Amarelo
+        expBar.progressDrawable.setColorFilter(Color.parseColor("#008000"), PorterDuff.Mode.SRC_IN) // Roxo
+
+// Definir os valores nos ProgressBars
+        hpBar.progress = pokemon.hp
+        atkBar.progress = pokemon.attack
+        defBar.progress = pokemon.defense
+        spdBar.progress = pokemon.speed
+        expBar.progress = pokemon.baseExperience
 
         val typesList = pokemon.types.split(", ").map { it.trim() }
-        val type1TextView = findViewById<Button>(R.id.type1)
-        val type2TextView = findViewById<Button>(R.id.type2)
+        val type1TextView = findViewById<TextView>(R.id.type1)
+        val type2TextView = findViewById<TextView>(R.id.type2)
 
         type1TextView.text = typesList.getOrNull(0) ?: ""
         type2TextView.text = typesList.getOrNull(1) ?: ""
+
+
 
         if (typesList.size == 1) {
             type2TextView.visibility = View.GONE
@@ -127,7 +150,11 @@ class PokemonDetailActivity : AppCompatActivity() {
         val softColor = ColorUtils.blendARGB(baseColor, Color.WHITE, 0.1f)
         val variedColor = ColorUtils.blendARGB(softColor, Color.WHITE, (pokemon.id % 4) * 0.1f)
 
-        setRoundedBackgroundColor(findViewById(R.id.pokemon_detail_container), variedColor)
+        setRoundedBackgroundColor(findViewById(R.id.type1), variedColor)
+        setRoundedBackgroundColor(findViewById(R.id.type2), variedColor)
+        setRoundedBackgroundColor(findViewById(R.id.RelativeLayoutImage), variedColor)
+        type1TextView.setTextColor(Color.WHITE)
+        type2TextView.setTextColor(Color.WHITE)
     }
 
     private fun setRoundedBackgroundColor(view: View, color: Int) {
