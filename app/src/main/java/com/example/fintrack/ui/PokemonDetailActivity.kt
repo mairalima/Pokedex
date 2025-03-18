@@ -100,23 +100,23 @@ class PokemonDetailActivity : AppCompatActivity() {
         hpBar.progressDrawable.setColorFilter(
             Color.parseColor("#FFD700"),
             PorterDuff.Mode.SRC_IN
-        ) // Verde
+        )
         atkBar.progressDrawable.setColorFilter(
             Color.parseColor("#8B0000"),
             PorterDuff.Mode.SRC_IN
-        ) // Vermelho
+        )
         defBar.progressDrawable.setColorFilter(
             Color.parseColor("#00008B"),
             PorterDuff.Mode.SRC_IN
-        ) // Azul
+        )
         spdBar.progressDrawable.setColorFilter(
             Color.parseColor("#40E0D0"),
             PorterDuff.Mode.SRC_IN
-        ) // Amarelo
+        )
         expBar.progressDrawable.setColorFilter(
             Color.parseColor("#008000"),
             PorterDuff.Mode.SRC_IN
-        ) // Roxo
+        )
 
 // Definir os valores nos ProgressBars
         hpBar.progress = pokemon.hp
