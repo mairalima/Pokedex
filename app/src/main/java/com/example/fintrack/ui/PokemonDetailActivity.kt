@@ -97,11 +97,26 @@ class PokemonDetailActivity : AppCompatActivity() {
         val expBar = findViewById<ProgressBar>(R.id.progressBarEXP)
 
 // Aplicar cores diferentes para cada ProgressBar
-        hpBar.progressDrawable.setColorFilter(Color.parseColor("#FFD700"), PorterDuff.Mode.SRC_IN) // Verde
-        atkBar.progressDrawable.setColorFilter(Color.parseColor("#8B0000"), PorterDuff.Mode.SRC_IN) // Vermelho
-        defBar.progressDrawable.setColorFilter(Color.parseColor("#00008B"), PorterDuff.Mode.SRC_IN) // Azul
-        spdBar.progressDrawable.setColorFilter(Color.parseColor("#40E0D0"), PorterDuff.Mode.SRC_IN) // Amarelo
-        expBar.progressDrawable.setColorFilter(Color.parseColor("#008000"), PorterDuff.Mode.SRC_IN) // Roxo
+        hpBar.progressDrawable.setColorFilter(
+            Color.parseColor("#FFD700"),
+            PorterDuff.Mode.SRC_IN
+        ) // Verde
+        atkBar.progressDrawable.setColorFilter(
+            Color.parseColor("#8B0000"),
+            PorterDuff.Mode.SRC_IN
+        ) // Vermelho
+        defBar.progressDrawable.setColorFilter(
+            Color.parseColor("#00008B"),
+            PorterDuff.Mode.SRC_IN
+        ) // Azul
+        spdBar.progressDrawable.setColorFilter(
+            Color.parseColor("#40E0D0"),
+            PorterDuff.Mode.SRC_IN
+        ) // Amarelo
+        expBar.progressDrawable.setColorFilter(
+            Color.parseColor("#008000"),
+            PorterDuff.Mode.SRC_IN
+        ) // Roxo
 
 // Definir os valores nos ProgressBars
         hpBar.progress = pokemon.hp
@@ -126,8 +141,10 @@ class PokemonDetailActivity : AppCompatActivity() {
         }
 
         // Obtém a cor do tipo ou usa uma cor padrão
-        val type1Color = typeColors[typesList.getOrNull(0)]?.let { ContextCompat.getColor(this, it) }
-        val type2Color = typeColors[typesList.getOrNull(1)]?.let { ContextCompat.getColor(this, it) }
+        val type1Color =
+            typeColors[typesList.getOrNull(0)]?.let { ContextCompat.getColor(this, it) }
+        val type2Color =
+            typeColors[typesList.getOrNull(1)]?.let { ContextCompat.getColor(this, it) }
 
 // Aplica a cor no texto se o tipo existir
         type1Color?.let { type1TextView.setTextColor(it) }
