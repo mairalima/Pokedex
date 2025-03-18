@@ -11,7 +11,7 @@ Evento de tecnologia promovido pelo Devspace.
 # Sobre o Projeto
 A proposta do app é apresentar uma lista de Pokémons e permitir que o usuário visualize detalhes completos de cada um deles. Além disso, o aplicativo conta com suporte offline e segue boas práticas de desenvolvimento.
 
-## :camera_flash: Screenshots
+# :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
 <img src="https://github.com/user-attachments/assets/5e9d3ac4-7ccc-4162-a9e9-68f64f2aa637" width=200/> <img src="https://github.com/user-attachments/assets/c05b26bb-967e-4483-8e8a-0fe5bdcd7df2" width=200/>
 
