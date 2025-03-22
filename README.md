@@ -56,8 +56,6 @@ Evento promovido pelo Devspace, com duração de duas semanas, focado em:
 - André Oliveira Brito Souza Vita
 - Talita Evancely
 - Maíra Lima
-- Eunice
-- Henrique Nunes
 
 # Como Rodar o Projeto
 - Clone o repositório:
